@@ -20,37 +20,33 @@ const Sidebar = () => {
             <hr />
             <div className="center">
                 <ul>
+                    <p className="title">Overview</p>
                     <li><GridViewIcon className="icon" /><span>Dashboard</span></li>
-                </ul>
-                <ul>
+                    <p className="title">Details</p>
                     <li><GroupOutlinedIcon className="icon" /><span>Users</span></li>
-                </ul>
-                <ul>
+
                     <li><StorageRoundedIcon className="icon" /><span>Databases</span></li>
-                </ul>
-                <ul>
+
                     <li><QueryStatsRoundedIcon className="icon" /><span>Stats</span></li>
-                </ul>
-                <ul>
+                    <p className="title">Service</p>
                     <li><NotificationImportantIcon className="icon" /><span>Notifications</span></li>
-                </ul>
-                <ul>
+
                     <li><HealthAndSafetyOutlinedIcon className="icon" /><span>System Health</span></li>
-                </ul>
-                <ul>
+
                     <li><ArticleIcon className="icon" /><span>Logs</span></li>
-                </ul>
-                <ul>
+                    <p className="title">User</p>
                     <li><SettingsIcon className="icon" /><span>Settings</span></li>
-                </ul>
-                <ul>
+
                     <li><AccountCircleOutlinedIcon className="icon" /><span>Profile</span></li>
-                </ul>
-                <ul>
+
                     <li><LogoutRoundedIcon className="icon" /><span>Logout</span></li>
                 </ul>
             </div>
-            <div className="bottom">Theme</div>
+            <div className="bottom">
+                <p className="title">Theme</p>
+                <div className="colorOption"></div>
+                <div className="colorOption"></div>
+            </div>
         </div>
     )
 }
