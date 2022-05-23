@@ -64,7 +64,7 @@ const Widget = ({ type }) => {
             <div className="left">
                 <span className="title">{data.title}</span>
                 <span className="counter">{data.number}</span>
-                <span className="link"><a href="">{data.link}</a></span>
+                <span className="link"><a href={data.title}>{data.link}</a></span>
             </div>
             <div className="right">
                 <div className="percentage positive">
@@ -72,7 +72,7 @@ const Widget = ({ type }) => {
                 </div>
                 {data.icon}
             </div>
-        </div>
+        </div >
     )
 }
 
