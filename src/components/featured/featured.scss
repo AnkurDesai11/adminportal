@@ -41,5 +41,37 @@
             color: gray;
             text-align: center;
         }
+
+        .numbers {
+            width: 70%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .item {
+                text-align: center;
+
+                .itemTitle {
+                    font-size: 13px;
+                    justify-content: center;
+                }
+
+                .itemValue {
+                    display: flex;
+                    align-items: center;
+                    margin-top: 8px;
+                    font-size: 13px;
+                    justify-content: center;
+                }
+
+                &.mysql {
+                    color: rgb(20, 80, 133);
+                }
+
+                &.mongo {
+                    color: #06330f;
+                }
+            }
+        }
     }
 }
