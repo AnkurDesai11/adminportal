@@ -3,4 +3,16 @@
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.15);
     -webkit-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.15);
     -moz-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    color: gray;
+    border-radius: 10px;
+
+    .title {
+        margin-bottom: 15px;
+        font-weight: 600;
+    }
+
+    .chartGrid {
+        stroke: rgb(222, 222, 222);
+    }
 }

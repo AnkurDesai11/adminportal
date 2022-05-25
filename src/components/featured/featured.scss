@@ -4,6 +4,7 @@
     -webkit-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.15);
     -moz-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.15);
     padding: 10px;
+    border-radius: 10px;
 
     .top {
         display: flex;
@@ -52,7 +53,7 @@
                 text-align: center;
 
                 .itemTitle {
-                    font-size: 13px;
+                    font-size: 15px;
                     justify-content: center;
                 }
 
@@ -60,7 +61,7 @@
                     display: flex;
                     align-items: center;
                     margin-top: 8px;
-                    font-size: 13px;
+                    font-size: 15px;
                     justify-content: center;
                 }
 
