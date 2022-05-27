@@ -4,6 +4,7 @@ import Chart from '../../components/chart/Chart'
 import Navbar from '../../components/navbar/Navbar'
 import Sidebar from '../../components/sidebar/Sidebar'
 import Widget from '../../components/widget/Widget'
+import Table from '../../components/table/Table'
 import "./home.scss"
 
 const Home = () => {
@@ -26,6 +27,7 @@ const Home = () => {
                     <div className="listTitle">
                         Recently registered users
                     </div>
+                    <Table />
                 </div>
             </div>
         </div>

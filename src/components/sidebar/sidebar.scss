@@ -48,9 +48,11 @@
                 align-items: center;
                 padding: 5px;
                 cursor: pointer;
+                transition: all 200ms ease;
 
                 &:hover {
                     background-color: #ffe5ef;
+                    padding-left: 10px;
                 }
 
                 .icon {

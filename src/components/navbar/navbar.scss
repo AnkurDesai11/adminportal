@@ -40,15 +40,34 @@
                 align-items: center;
                 margin-right: 25px;
                 position: relative;
+                cursor: pointer;
+                transition: all 200ms ease;
+
+                &:hover {
+                    font-size: 15px;
+                }
+
 
                 .icon {
                     font-size: 20px;
+                    transition: all 200ms ease;
+
+                    &:hover {
+                        font-size: 25px;
+                    }
                 }
 
                 .avatar {
                     width: 30px;
                     height: 30px;
                     border-radius: 50%;
+                    transition: all 200ms ease;
+
+                    &:hover {
+                        width: 35px;
+                        height: 35px;
+                        border-radius: 50%;
+                    }
                 }
 
                 .counter {
