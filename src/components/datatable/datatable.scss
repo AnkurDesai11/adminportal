@@ -1,4 +1,53 @@
 .datatable {
     height: 560px;
     padding: 20px;
+
+    .cellWithImg {
+        display: flex;
+        align-items: center;
+
+        .cellImg {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+    }
+
+    .cellstatus {
+        padding: 5px;
+        border-radius: 5px;
+
+        &.mysql {
+            color: #145085;
+            background-color: #c1e3ff;
+            ;
+        }
+
+        &.mongodb {
+            color: #06330f;
+            background-color: #ccfdd4;
+        }
+    }
+
+    .cellAction {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        .viewButton {
+            padding: 2px 5px;
+            border-radius: 5px;
+            color: rgb(150, 110, 0);
+            border: 1px solid rgb(95, 79, 11);
+        }
+
+        .deleteButton {
+            padding: 2px 5px;
+            border-radius: 5px;
+            color: rgb(160, 0, 0);
+            border: 1px solid rgb(30, 11, 11);
+        }
+    }
 }
