@@ -9,11 +9,11 @@ const data = [
     { name: "May", MySQLusers: 0, MongoDBusers: 4, },
 ];
 
-const Chart = () => {
+const Chart = ({ aspect, title }) => {
     return (
         <div className='chart'>
-            <div className="title">User Registrations</div>
-            <ResponsiveContainer width="100%" aspect={2 / 1}>
+            <div className="title">{title}</div>
+            <ResponsiveContainer width="100%" aspect={aspect}>
                 <AreaChart width={730} height={250} data={data}
                     margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
                     <defs>
