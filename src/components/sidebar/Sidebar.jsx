@@ -10,38 +10,41 @@ import ArticleIcon from '@mui/icons-material/Article';
 import SettingsIcon from '@mui/icons-material/Settings';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
     return (
         <div className="sidebar">
             <div className="top">
-                <span className="logo"><a href="/"><span className="innerLogo"><AdminPanelSettingsIcon />db</span>Admin</a></span>
+                <Link to="/" className="link">
+                    <span className="logo"><span className="innerLogo"><AdminPanelSettingsIcon />db</span>Admin</span>
+                </Link>
             </div>
             <hr />
             <div className="center">
                 <ul>
                     <p className="title">Overview</p>
-                    <li><GridViewIcon className="icon" /><span><a href="/">Dashboard</a></span></li>
+                    <Link to="/" className="link"><li><GridViewIcon className="icon" />Dashboard</li></Link>
                     <p className="title">Details</p>
-                    <li><GroupOutlinedIcon className="icon" /><span><a href="/users">Users</a></span></li>
+                    <Link to="/users" className="link"><li><GroupOutlinedIcon className="icon" />Users</li></Link>
 
-                    <li><StorageRoundedIcon className="icon" /><span><a href="/databases">Databases</a></span></li>
+                    <Link to="/databases" className="link"><li><StorageRoundedIcon className="icon" />Databases</li></Link>
 
-                    <li><QueryStatsRoundedIcon className="icon" /><span><a href="/stats">Stats</a></span></li>
+                    <Link to="/stats" className="link"><li><QueryStatsRoundedIcon className="icon" />Stats</li></Link>
                     <p className="title">Service</p>
-                    <li><NotificationImportantIcon className="icon" /><span><a href="/notifications">Notifications</a></span></li>
+                    <Link to="/notifications" className="link"><li><NotificationImportantIcon className="icon" />Notifications</li ></Link>
 
-                    <li><HealthAndSafetyOutlinedIcon className="icon" /><span><a href="/health">System Health</a></span></li>
+                    <Link to="/health" className="link"><li><HealthAndSafetyOutlinedIcon className="icon" />System Health</li ></Link>
 
-                    <li><ArticleIcon className="icon" /><span><a href="/logs">Logs</a></span></li>
+                    <Link to="/logs" className="link"><li><ArticleIcon className="icon" />Logs</li ></Link>
                     <p className="title">User</p>
-                    <li><SettingsIcon className="icon" /><span><a href="/settings">Settings</a></span></li>
+                    <Link to="/settings" className="link"><li><SettingsIcon className="icon" />Settings</li ></Link>
 
-                    <li><AccountCircleOutlinedIcon className="icon" /><span><a href="/profile">Profile</a></span></li>
+                    <Link to="/profile" className="link"><li><AccountCircleOutlinedIcon className="icon" />Profile</li ></Link>
 
-                    <li><LogoutRoundedIcon className="icon" /><span><a href="/logout">Logout</a></span></li>
-                </ul>
-            </div>
+                    <Link to="/logout" className="link"><li><LogoutRoundedIcon className="icon" />Logout</li ></Link>
+                </ul >
+            </div >
             <div className="bottom">
                 <p className="title">Theme</p>
                 <div className="colorOption"></div>

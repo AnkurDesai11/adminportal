@@ -6,6 +6,7 @@ import Single from "./pages/single/Single";
 import {
   BrowserRouter, Routes, Route,
 } from "react-router-dom";
+import { newUserForm } from "./formsource";
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
             <Route path="users">
               <Route index element={<List />} />
               <Route path=":userId" element={<Single />} />
-              <Route path="new" element={<New />} />
+              <Route path="new" element={<New fields={newUserForm} title="Add New User" />} />
 
             </Route>
           </Route>
