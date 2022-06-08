@@ -1,0 +1,93 @@
+.app.dark {
+    background-color: rgb(20, 20, 20);
+    color: rgb(225, 225, 225);
+
+    .widget,
+    .featured,
+    .chart,
+    .listContainer {
+        box-shadow: 0px 0px 10px 5px rgba(75, 75, 75, 0.15);
+        -webkit-box-shadow: 0px 0px 10px 5px rgba(75, 75, 75, 0.15);
+        -moz-box-shadow: 0px 0px 10px 5px rgba(75, 75, 75, 0.15);
+    }
+
+    .chartGrid {
+        stroke: rgba(222, 222, 222, 0.222);
+        box-shadow: 0px 0px 10px 5px rgba(75, 75, 75, 0.15);
+        -webkit-box-shadow: 0px 0px 10px 5px rgba(75, 75, 75, 0.15);
+        -moz-box-shadow: 0px 0px 10px 5px rgba(75, 75, 75, 0.15);
+    }
+
+    .table {
+        background-color: rgb(20, 20, 20);
+
+
+        .tableCell {
+            color: grey;
+        }
+    }
+
+    .navbar {
+        color: rgb(225, 225, 225);
+        border-color: rgb(75, 75, 75);
+        background-color: rgb(20, 20, 20);
+
+        .search {
+            border-color: lightgray;
+
+            input {
+                border: none;
+                outline: none;
+                background-color: transparent;
+
+                &::placeholder {
+                    color: lightgray;
+                }
+            }
+        }
+    }
+
+    .sidebar {
+        background-color: rgb(20, 20, 20);
+        color: rgb(170, 170, 170);
+        border-color: rgb(75, 75, 75);
+
+        .top {
+            .logo {
+                color: #e62222;
+
+                .innerLogo {
+                    font-weight: bold;
+                    color: #e0003d;
+                }
+            }
+
+        }
+
+        hr {
+            color: rgb(33, 33, 33);
+        }
+
+        ul {
+            li {
+                &:hover {
+                    background-color: #492030;
+                    padding-left: 10px;
+                }
+            }
+        }
+    }
+
+    .datatable {
+        .datagrid {
+            color: gray;
+            border-color: #333333;
+        }
+    }
+
+    input {
+        background-color: transparent;
+        color: #666;
+    }
+
+}

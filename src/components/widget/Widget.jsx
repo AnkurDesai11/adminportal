@@ -5,6 +5,7 @@ import StorageRoundedIcon from '@mui/icons-material/StorageRounded';
 import CompareArrowsRoundedIcon from '@mui/icons-material/CompareArrowsRounded';
 import ExitToAppRoundedIcon from '@mui/icons-material/ExitToAppRounded';
 import ErrorOutlineRoundedIcon from '@mui/icons-material/ErrorOutlineRounded';
+import { Link } from "react-router-dom";
 
 const Widget = ({ type }) => {
     let data;
@@ -64,7 +65,7 @@ const Widget = ({ type }) => {
             <div className="left">
                 <span className="title">{data.title}</span>
                 <span className="counter">{data.number}</span>
-                <span className="link"><a href={data.title}>{data.link}</a></span>
+                <span className="link"><Link to={data.title} >{data.link}</Link></span>
             </div>
             <div className="right">
                 <div className="percentage positive">

@@ -7,10 +7,11 @@ import {
   BrowserRouter, Routes, Route,
 } from "react-router-dom";
 import { newUserForm } from "./formsource";
+import './style/dark.scss'
 
 function App() {
   return (
-    <div className="App">
+    <div className="app dark">
       <BrowserRouter>
         <Routes>
           <Route path="/">

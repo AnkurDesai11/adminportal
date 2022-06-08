@@ -39,7 +39,7 @@ const New = ({ fields, title }) => {
                                     <label htmlFor="">Phone</label>
                                     <PhoneInput
                                         disabled=""
-                                        containerClass=""
+                                        containerClass="phoneInput"
                                         onChange={setValue}
                                         placeholder="Enter Contact Number"
                                     />
