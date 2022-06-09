@@ -8,10 +8,16 @@ import {
 } from "react-router-dom";
 import { newUserForm } from "./formsource";
 import './style/dark.scss'
+import { useContext } from "react";
+import { DarkModeContext } from "./context/darkModeContext";
 
+
+//using useState will be inefficient for dark mode, 
+//using context api is better, allows to reach data from anyh component
 function App() {
+  const { darkMode } = useContext(DarkModeContext);
   return (
-    <div className="app dark">
+    <div className={darkMode ? " app dark" : "app"} >
       <BrowserRouter>
         <Routes>
           <Route path="/">
