@@ -26,6 +26,7 @@ const New = ({ fields, title }) => {
                             <div className="formInput">
                                 <label htmlFor="file">
                                     Upload Profile Image:<AddPhotoAlternateRoundedIcon className="ImageIcon" />
+                                    Max Size 10MB
                                 </label>
                                 <input type="file" id="file" onChange={e => setFile(e.target.files[0])} style={{ display: "none" }} />
                             </div>
