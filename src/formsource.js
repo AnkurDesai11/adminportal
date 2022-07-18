@@ -13,8 +13,8 @@ export const newUserForm = [
     },
     {
         id: 3,
-        label: "First name",
-        type: "text",
+        label: "Date of Birth",
+        type: "date",
         placeholder: "John"
     },
     {
