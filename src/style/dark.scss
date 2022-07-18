@@ -90,4 +90,29 @@
         color: #666;
     }
 
+    #okta-sign-in.auth-container.main-container {
+        background-color: rgb(20, 20, 20);
+        border-color: rgb(70, 70, 70);
+    }
+
+    #okta-sign-in .beacon-blank {
+        background-color: rgb(20, 20, 20);
+    }
+
+    #okta-sign-in.auth-container .okta-sign-in-header {
+        border-bottom-color: rgb(70, 70, 70);
+    }
+
+    #okta-sign-in.auth-container .o-form-head {
+        color: darkgray;
+    }
+
+    #okta-sign-in.auth-container a.link:link {
+        color: darkgray;
+    }
+
+    .oktawidget {
+        background-color: rgb(20, 20, 20);
+    }
+
 }
