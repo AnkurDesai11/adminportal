@@ -6,11 +6,39 @@ import FullscreenExitOutlinedRoundedIcon from '@mui/icons-material/FullscreenExi
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
 import FormatListNumberedRoundedIcon from '@mui/icons-material/FormatListNumberedRounded';
-import { useContext } from "react";
+import LoginIcon from '@mui/icons-material/Login';
+import LogoutIcon from '@mui/icons-material/Logout';
+import { useContext, useEffect, useState } from "react";
 import { DarkModeContext } from "../../context/darkModeContext";
+import { Link, useHistory } from 'react-router-dom';
+import { useOktaAuth } from '@okta/okta-react';
 
 const Navbar = () => {
     const { dispatch } = useContext(DarkModeContext);
+    const { oktaAuth, authState } = useOktaAuth();
+    const history = useHistory();
+
+    const [userInfo, setUserInfo] = useState(null);
+
+    useEffect(() => {
+        if (!authState || !authState.isAuthenticated) {
+            // When user isn't authenticated, forget any user info
+            setUserInfo(null);
+        } else {
+            oktaAuth.getUser().then((info) => {
+                setUserInfo(info);
+            }).catch((err) => {
+                console.error(err);
+            });
+        }
+    }, [authState, oktaAuth]); // Update if authState changes
+
+    if (!authState) {
+        return <div>Loading ...</div>;
+    }
+    const handleLogin = async () => history.push('/login');
+
+    const handleLogout = async () => oktaAuth.signOut();
     return (
         <div className="navbar">
             <div className="wrapper">
@@ -19,13 +47,11 @@ const Navbar = () => {
                     <ManageSearchOutlinedIcon className="icon" />
                 </div>
                 <div className="items">
-                    <div className="item">
+                    {/*<div className="item">
                         <LanguageOutlinedIcon className="icon" />
                         English
                     </div>
-                    <div className="item">
-                        <DarkModeOutlinedIcon className="icon" onClick={() => { dispatch({ type: "TOGGLE" }) }} />
-                    </div>
+                    
                     <div className="item">
                         <FullscreenExitOutlinedRoundedIcon className="icon" />
                     </div>
@@ -44,6 +70,23 @@ const Navbar = () => {
                         <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/9abb1ef8-fad0-4122-b68b-b04c90ac47ac-profile_image-300x300.png"
                             alt="" className="avatar"
                         />
+                    </div>*/}
+                    <div className="item">
+                        <DarkModeOutlinedIcon className="icon" onClick={() => { dispatch({ type: "TOGGLE" }) }} />
+                    </div>
+                    {
+                        authState.isAuthenticated
+                            ? <div className="item">
+                                {userInfo.email}
+                            </div>
+                            : ""
+                    }
+                    <div className="item">
+                        {
+                            authState.isAuthenticated
+                                ? <LogoutIcon className="icon" onClick={handleLogout} />
+                                : <LoginIcon className="icon" onClick={handleLogin} />
+                        }
                     </div>
                 </div>
             </div>
