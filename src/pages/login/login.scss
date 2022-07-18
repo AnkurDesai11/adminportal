@@ -1,0 +1,17 @@
+.login {
+    display: flex;
+
+    .loginContainer {
+        flex: 5;
+
+        .loginWidget {
+            display: flex;
+            font-size: 18px;
+            justify-content: center;
+
+
+        }
+
+
+    }
+}
