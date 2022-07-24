@@ -4,15 +4,35 @@ import Navbar from "../../components/navbar/Navbar";
 import { PhoneInput } from "react-contact-number-input";
 import { useState } from "react";
 import AddPhotoAlternateRoundedIcon from '@mui/icons-material/AddPhotoAlternateRounded';
+import { useEffect } from "react";
 
 const New = ({ fields, title }) => {
-    const [value, setValue] = useState()
+
     const [file, setFile] = useState()
-    console.log(value)
-    console.log(file)
+
+    let userData = { phone: '', country: '' }
+    fields.forEach((item) => {
+        userData[item.key] = '';
+    });
+    const [formData, setFormData] = useState(userData)
+    //handle change
+    const handleChange = (event, key) => {
+        //set values of dynamic fields
+        setFormData({ ...formData, [key]: event.target.value })
+        console.log(formData)
+    }
+
+    //set value of country and phone from PhoneInput object
+    const [value, setValue] = useState()
+    useEffect(() => {
+        formData.phone = (value == null) ? '' : (value.countryCode + value.phoneNumber);
+        formData.country = '';
+        console.log(formData);
+    }, [value])
+
+
     return (
         <div className="new">
-            <link rel="stylesheet" href="" />
             <Sidebar />
             <div className="newContainer">
                 <Navbar />
@@ -33,7 +53,7 @@ const New = ({ fields, title }) => {
                             {fields.map((field) => (
                                 <div className="formInput">
                                     <label htmlFor="">{field.label}</label>
-                                    <input type={field.type} placeholder={field.placeholder} />
+                                    <input type={field.type} placeholder={field.placeholder} id={field.key} onChange={e => handleChange(e, [field.key])} />
                                 </div>))}
                             {title === "Add New User" &&
                                 <div className="formInputPhone" style={{ color: "dimgray" }}>
