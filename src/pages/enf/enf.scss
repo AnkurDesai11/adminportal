@@ -1,0 +1,15 @@
+.errorpage {
+    display: flex;
+
+    .errorContainer {
+        flex: 5;
+
+        .errorMain {
+            display: flex;
+            font-size: 18px;
+            justify-content: center;
+            padding-top: 100px;
+            width: 100%;
+        }
+    }
+}
