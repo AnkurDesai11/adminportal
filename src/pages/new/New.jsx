@@ -9,6 +9,9 @@ import { useEffect } from "react";
 const New = ({ fields, title }) => {
 
     const [file, setFile] = useState()
+    const [error, setError] = useState({
+        messages: {}
+    })
 
     let userData = { phone: '', country: '' }
     fields.forEach((item) => {
@@ -25,8 +28,18 @@ const New = ({ fields, title }) => {
     //set value of country and phone from PhoneInput object
     const [value, setValue] = useState()
     useEffect(() => {
-        formData.phone = (value == null) ? '' : (value.countryCode + value.phoneNumber);
-        formData.country = '';
+        if (value !== undefined && value !== null) {
+            if (value.phoneNumber !== 0 && value.phoneNumber !== '') {
+                formData.phone = value.countryCode + value.phoneNumber;
+                formData.country = (value.country == null) ? '' : value.country.name;
+                error.messages["phone"] = value.message;
+            }
+            else {
+                formData.phone = "";
+                formData.country = "";
+                delete error.messages["phone"];
+            }
+        }
         console.log(formData);
     }, [value])
 
