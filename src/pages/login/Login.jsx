@@ -2,7 +2,7 @@ import React from 'react'
 import "./login.scss"
 import Navbar from '../../components/navbar/Navbar'
 import Sidebar from '../../components/sidebar/Sidebar'
-import { Redirect } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import OktaSignInWidget from '../../components/OktaSignInWidget/OktaSignInWidget';
 import { useOktaAuth } from '@okta/okta-react';
 
@@ -21,7 +21,7 @@ const Login = ({ config }) => {
     }
 
     return authState.isAuthenticated ?
-        <Redirect to={{ pathname: '/' }} /> :
+        <Navigate to={{ pathname: '/' }} /> :
         <div className="login">
             <Sidebar />
             <div className="loginContainer">

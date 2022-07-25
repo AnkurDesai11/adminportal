@@ -10,13 +10,13 @@ import LoginIcon from '@mui/icons-material/Login';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { useContext, useEffect, useState } from "react";
 import { DarkModeContext } from "../../context/darkModeContext";
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useOktaAuth } from '@okta/okta-react';
 
 const Navbar = () => {
     const { dispatch } = useContext(DarkModeContext);
     const { oktaAuth, authState } = useOktaAuth();
-    const history = useHistory();
+    const history = useNavigate();
 
     const [userInfo, setUserInfo] = useState(null);
 
