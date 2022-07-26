@@ -9,9 +9,9 @@ import { useEffect } from "react";
 const New = ({ fields, title }) => {
 
     const [file, setFile] = useState()
-    const [error, setError] = useState({
+    const error = {
         messages: {}
-    })
+    }
 
     let userData = { phone: '', country: '' }
     fields.forEach((item) => {
@@ -40,7 +40,7 @@ const New = ({ fields, title }) => {
                 delete error.messages["phone"];
             }
         }
-        console.log(formData);
+        console.log(formData, error);
     }, [value])
 
 
