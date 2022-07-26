@@ -33,11 +33,6 @@ const Navbar = () => {
         }
     }, [authState, oktaAuth]); // Update if authState changes
 
-    if (!authState) {
-        return <div>Loading ...</div>;
-    }
-    const handleLogin = async () => history.push('/login');
-
     const handleLogout = async () => oktaAuth.signOut();
     return (
         <div className="navbar">
@@ -75,17 +70,18 @@ const Navbar = () => {
                         <DarkModeOutlinedIcon className="icon" onClick={() => { dispatch({ type: "TOGGLE" }) }} />
                     </div>
                     {
-                        authState.isAuthenticated
+                        authState && authState.isAuthenticated
                             ? <div className="item">
-                                {userInfo.email}
+                                Signed in as <br />
+                                {JSON.parse(localStorage.getItem('okta-token-storage'))['idToken']['claims']['email']}
                             </div>
                             : ""
                     }
                     <div className="item">
                         {
-                            authState.isAuthenticated
+                            authState && authState.isAuthenticated
                                 ? <LogoutIcon className="icon" onClick={handleLogout} />
-                                : <LoginIcon className="icon" onClick={handleLogin} />
+                                : <Link to="/login" className="link"><LoginIcon className="icon" /></Link>
                         }
                     </div>
                 </div>

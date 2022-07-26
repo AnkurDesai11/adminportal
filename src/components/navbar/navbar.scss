@@ -38,6 +38,7 @@
             .item {
                 display: flex;
                 align-items: center;
+                justify-content: center;
                 margin-right: 25px;
                 position: relative;
                 cursor: pointer;
@@ -47,6 +48,10 @@
                     font-size: 15px;
                 }
 
+                .link {
+                    color: inherit;
+                    text-decoration: none;
+                }
 
                 .icon {
                     font-size: 20px;

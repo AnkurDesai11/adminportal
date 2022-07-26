@@ -33,8 +33,11 @@ function App() {
 
   return (
     <div className={darkMode ? " app dark" : "app"} >
-
-      <BrowserRouter>
+      <Security
+        oktaAuth={oktaAuth}
+        onAuthRequired={customAuthHandler}
+        restoreOriginalUri={restoreOriginalUri}
+      >
         <Routes>
 
           <Route path="/">
@@ -51,7 +54,7 @@ function App() {
           <Route path="*" element={<Enf />} />
 
         </Routes>
-      </BrowserRouter>
+      </Security>
       {/*
 
       <Security
