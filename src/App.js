@@ -9,7 +9,7 @@ import { newUserForm } from "./formsource";
 import { DarkModeContext } from "./context/darkModeContext";
 import { SecureRoute, Security, LoginCallback } from '@okta/okta-react';
 import { OktaAuth, toRelativeUrl } from '@okta/okta-auth-js';
-import { BrowserRouter, Routes, Route, useNavigate, Switch } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Switch, useHistory } from "react-router-dom";
 import { useContext } from "react";
 import { securityConfig } from './config';
 
@@ -21,7 +21,7 @@ function App() {
 
   const { darkMode } = useContext(DarkModeContext);
 
-  const history = useNavigate();
+  const history = useHistory();
 
   const customAuthHandler = () => {
     history.push('/login');
@@ -33,6 +33,7 @@ function App() {
 
   return (
     <div className={darkMode ? " app dark" : "app"} >
+      {/*
       <Security
         oktaAuth={oktaAuth}
         onAuthRequired={customAuthHandler}
@@ -55,7 +56,7 @@ function App() {
 
         </Routes>
       </Security>
-      {/*
+  */}
 
       <Security
         oktaAuth={oktaAuth}
@@ -65,14 +66,13 @@ function App() {
         <Switch>
           <Route exact path="/" render={() => <Home />} />
           <Route path="/login" render={() => <Login />} />
-          <Route path="/login/callback" component={LoginCallback} />
+          <Route path="/login/callback" render={() => <LoginCallback />} />
           <SecureRoute path="/users" render={() => <List />} />
           <SecureRoute path="/users/:userId" render={() => <Single />} />
           <SecureRoute path="/users/new" render={() => (<New fields={newUserForm} title={"Add New User"} />)} />
           <Route path="*" render={() => <Enf />} />
         </Switch>
       </Security>
-  */}
     </div >
   );
 }

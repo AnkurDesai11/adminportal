@@ -10,13 +10,13 @@ import LoginIcon from '@mui/icons-material/Login';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { useContext, useEffect, useState } from "react";
 import { DarkModeContext } from "../../context/darkModeContext";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useOktaAuth } from '@okta/okta-react';
 
 const Navbar = () => {
     const { dispatch } = useContext(DarkModeContext);
     const { oktaAuth, authState } = useOktaAuth();
-    const history = useNavigate();
+    const history = useHistory();
 
     const [userInfo, setUserInfo] = useState(null);
 
@@ -66,9 +66,6 @@ const Navbar = () => {
                             alt="" className="avatar"
                         />
                     </div>*/}
-                    <div className="item">
-                        <DarkModeOutlinedIcon className="icon" onClick={() => { dispatch({ type: "TOGGLE" }) }} />
-                    </div>
                     {
                         authState && authState.isAuthenticated
                             ? <div className="item">
@@ -77,6 +74,9 @@ const Navbar = () => {
                             </div>
                             : ""
                     }
+                    <div className="item">
+                        <DarkModeOutlinedIcon className="icon" onClick={() => { dispatch({ type: "TOGGLE" }) }} />
+                    </div>
                     <div className="item">
                         {
                             authState && authState.isAuthenticated
