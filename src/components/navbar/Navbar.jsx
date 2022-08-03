@@ -69,10 +69,11 @@ const Navbar = () => {
                     {
                         authState && authState.isAuthenticated
                             ? <div className="item">
-                                Signed in as <br />
+                                Logged in as <br />
                                 {JSON.parse(localStorage.getItem('okta-token-storage'))['idToken']['claims']['email']}
                             </div>
-                            : ""
+                            : <div className="item">Not logged in</div>
+
                     }
                     <div className="item">
                         <DarkModeOutlinedIcon className="icon" onClick={() => { dispatch({ type: "TOGGLE" }) }} />
